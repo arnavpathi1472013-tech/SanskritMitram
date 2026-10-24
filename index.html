@@ -13,6 +13,10 @@
   <header class="site-header">
     <h1 class="site-name" lang="sa">संस्कृत-मित्रम्</h1>
     <p class="site-tagline">Sanskrit-Mitram · lessons for Classes 6–8</p>
+    <nav class="site-nav" aria-label="Main">
+      <a id="nav-lessons" href="#/" aria-current="page">Lessons</a>
+      <a id="nav-history" href="#/history"><span lang="sa">मम प्रश्नोत्तरी-इतिहासः</span> <span class="nav-en">(Quiz History)</span></a>
+    </nav>
   </header>
 
   <main class="page">
@@ -29,6 +33,11 @@
       <h2 id="lesson-title" class="lesson-title" tabindex="-1"></h2>
       <div id="lesson-status" class="message" role="status" aria-live="polite" hidden></div>
       <article id="lesson-content" class="lesson-content"></article>
+    </section>
+
+    <!-- Quiz History and saved quiz attempts (hidden until opened) -->
+    <section id="history-view" hidden>
+      <div id="history-content"></div>
     </section>
 
     <noscript>
