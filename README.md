@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/ganesha.svg" alt="Sanskrit-Mitram" width="100" />
+<img src="assets/readme/sktmitram.svg" alt="Sanskrit-Mitram" width="100" />
 
 # संस्कृत-मित्रम्
 ### Sanskrit-Mitram
@@ -15,18 +15,19 @@ Learn संस्कृतम्. Explore its wisdom. One lesson at a time.
 
 <!-- Replace YOUR_USERNAME with your GitHub username -->
 
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY">
+<a href="https://github.com/arnavpathi1472013-tech/SanskritMitram">
   <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge&logo=github" alt="Project status: In development" />
 </a>
 <img src="https://img.shields.io/badge/Language-Sanskrit%20%7C%20English%20%7C%20Hindi-7C3AED?style=for-the-badge" alt="Languages" />
 <img src="https://img.shields.io/badge/Cost-Free-16A34A?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="Free project" />
 <img src="https://img.shields.io/badge/Made%20for-Learners-0284C7?style=for-the-badge&logo=bookstack&logoColor=white" alt="Made for learners" />
-
+<img src="https://img.shields.io/badge/Made%20by-Arnav%20Pathi-0F766E?style=for-the-badge&logo=github&logoColor=white"
+  alt="Made by Arnav Pathi" />
 <br /><br />
 
-**[Explore the Repository](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY)**
-· **[Report a Bug](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues)**
-· **[Request a Feature](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues)**
+**[Explore the Repository](https://github.com/arnavpathi1472013-tech/SanskritMitram)**
+· **[Report a Bug](https://github.com/arnavpathi1472013-tech/SanskritMitram/issues)**
+· **[Request a Feature](https://github.com/arnavpathi1472013-tech/SanskritMitram/issues)**
 
 </div>
 
@@ -66,11 +67,7 @@ Whether you're revising a श्लोक, learning व्याकरणम्,
 
 </div>
 
-> **Screenshots coming soon!** Replace these image paths with real screenshots of the implemented interface. GitHub will display the images once the files exist in your repository.
-
 ## 🌟 Features
-
-> Features below describe the project's goals. Mark a feature as available only after it has been implemented and tested.
 
 ### 📚 Organised Learning
 
@@ -92,8 +89,6 @@ Whether you're revising a श्लोक, learning व्याकरणम्,
 - Feedback after quiz submission.
 - Explanations to help learners understand their answers.
 - A quiz-attempt history for reviewing previous results.
-
-*Interactive quiz features depend on the quiz system being implemented in the application.*
 
 ### ⚡ Repository-Driven Content
 
@@ -145,7 +140,7 @@ Sanskrit-Mitram should feel modern without losing the character of Sanskrit.
 
 ## 🛠️ Built With
 
-The intended technology stack includes:
+The technology stack includes:
 
 <div align="center">
 
@@ -158,18 +153,6 @@ The intended technology stack includes:
 <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub Pages" />
 
 </div>
-
-| Technology | Purpose |
-|---|---|
-| HTML | Page structure |
-| CSS | Layout, styling, and responsive design |
-| JavaScript | Interactive features and lesson rendering |
-| Python | Automated content processing |
-| Markdown | Human-readable lesson authoring |
-| GitHub Actions | Automated workflows |
-| GitHub Pages | Static website hosting |
-
-*Update this section if the final implementation differs from the planned stack.*
 
 ## 📂 Project Structure
 
@@ -205,8 +188,6 @@ sanskrit-mitram/
 │
 └── README.md
 ```
-
-**Note:** This is an illustrative structure, not a claim that every file already exists. Adjust the paths to match the actual repository.
 
 ## 🚀 Getting Started
 
@@ -311,15 +292,6 @@ For features using browser-local storage:
 - Clearing browser storage may erase saved attempts.
 - Browser storage should not be treated as a secure place for sensitive information.
 
-The final privacy description should match the application's actual data collection and storage behaviour.
-
-## 📜 Licence
-
-**Licence: To be decided.**
-
-If you want others to reuse, modify, and distribute your source code, choose an appropriate open-source licence and add its licence file to the repository.
-
-Do not claim that the project is open-source under a particular licence until you've actually selected and added one.
 
 ## 💬 Feedback & Support
 
@@ -335,6 +307,44 @@ Useful reports include:
 - Screenshots, where relevant.
 
 ---
+
+---
+
+## 👨‍💻 Meet the Developer
+
+<div align="center">
+
+<img src="assets/readme/sktmitram.svg" alt="Sanskrit-Mitram" width="100" />
+
+
+*Creator & Developer of Sanskrit-Mitram*
+
+Building a better way to learn Sanskrit, one feature at a time. 🪷
+
+<br />
+
+<a href="mailto:arnav.pathi1472013@gmail.com">
+  <img src="https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Arnav Pathi" />
+</a>
+<a href="https://www.instagram.com/arnav_pathi_147/">
+  <img src="https://img.shields.io/badge/Instagram-@arnav__pathi__147-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram: arnav_pathi_147" />
+</a>
+<a href="https://github.com/arnavpathi1472013-tech">
+  <img src="https://img.shields.io/badge/GitHub-Arnav%20Pathi-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" />
+</a>
+<a href="https://github.com/arnavpathi1472013-tech?tab=repositories">
+  <img src="https://img.shields.io/badge/Explore-My%20Projects-0F766E?style=for-the-badge&logo=github&logoColor=white" alt="Explore Arnav Pathi's Projects" />
+</a>
+
+<br /><br />
+
+**Have an idea, found a bug, or want to contribute?**
+
+[Open an Issue](https://github.com/arnavpathi1472013-tech/SanskritMitram/issues)
+· [Explore the Repository](https://github.com/arnavpathi1472013-tech/SanskritMitram)
+
+<br />
+
 
 <div align="center">
 
