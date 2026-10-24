@@ -1,5 +1,6 @@
-<div align="center"> <img src="/SanskritMitram/assets/ganesh.svg" alt="श्री गणेश" width="150"> 
-
+ ![श्री गणेश](/SanskritMitram/assets/ganesh.svg)
+  
+ <div align="center"> 
   # श्री गणेश प्रार्थना 
   
 #keywords: ganesh, shubharambh, vakratunda mahakaya, ganesh aarti, ganesh mantra, shloka, easy shloka, ganesh vandana 
