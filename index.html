@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>संस्कृत-मित्रम् | Sanskrit-Mitram</title>
+  <meta name="description" content="Sanskrit lessons, textbooks, stories and shlokas for Classes 6 to 8.">
+  <!-- All paths below are relative (no leading "/") so the site also works at
+       https://username.github.io/repository/ -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-name" lang="sa">संस्कृत-मित्रम्</h1>
+    <p class="site-tagline">Sanskrit-Mitram · lessons for Classes 6–8</p>
+  </header>
+
+  <main class="page">
+    <!-- The lesson list -->
+    <section id="catalogue-view" aria-labelledby="lessons-heading">
+      <h2 id="lessons-heading" class="visually-hidden">Lessons</h2>
+      <div id="status" class="message" role="status" aria-live="polite"><p>Loading lessons…</p></div>
+      <div id="catalogue"></div>
+    </section>
+
+    <!-- A single Markdown lesson (hidden until one is opened) -->
+    <section id="lesson-view" hidden>
+      <a class="back-link" href="#/">← All lessons</a>
+      <h2 id="lesson-title" class="lesson-title" tabindex="-1"></h2>
+      <div id="lesson-status" class="message" role="status" aria-live="polite" hidden></div>
+      <article id="lesson-content" class="lesson-content"></article>
+    </section>
+
+    <noscript>
+      <p class="message" data-kind="error">This site needs JavaScript to show the lessons.</p>
+    </noscript>
+  </main>
+
+  <script type="module" src="js/lessons.js"></script>
+</body>
+</html>
