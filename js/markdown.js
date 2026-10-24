@@ -11,7 +11,8 @@
 //
 // Supported: headings, paragraphs, **bold**, *italic*, ~~strike~~, `code`,
 // fenced code blocks, block quotes, bullet/numbered lists (nested), tables,
-// horizontal rules, links and images. A single line break inside a paragraph
+// horizontal rules, links and images, and ```quiz-json blocks (handed to the
+// quiz renderer supplied by the page). A single line break inside a paragraph
 // is kept as a line break (handy for shlokas).
 //
 // Lines such as "#title: ..." and "#keywords: ..." are catalogue metadata and
@@ -25,6 +26,7 @@ const LIST_ITEM = /^( *)([-*+]|\d{1,9}[.)])[ \t]+(.*)$/;
 const TABLE_SEPARATOR = /^\s*\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)*\|?\s*$/;
 const DIRECTIVE = /^ {0,3}#(title|keywords)[ \t]*:/i;
 const ESCAPABLE = "\\`*_{}[]()#+-.!|~<>";
+const QUIZ_LANGUAGE = "quiz-json"; // must match QUIZ_LANGUAGE in quiz-core.js
 
 // ---------------------------------------------------------------------------
 // Step 1: text -> blocks
@@ -91,7 +93,9 @@ function parseBlocks(lines) {
       i++;
       while (i < lines.length && !closing.test(lines[i])) code.push(lines[i++]);
       i++; // skip the closing fence (or run off the end if it is missing)
-      blocks.push({ type: "code", text: code.join("\n") });
+      // A fence labelled "quiz-json" holds quiz data, not ordinary code.
+      const language = m[2].trim().split(/\s+/)[0].toLowerCase();
+      blocks.push({ type: language === QUIZ_LANGUAGE ? "quiz" : "code", text: code.join("\n") });
       continue;
     }
 
@@ -455,6 +459,7 @@ export function inlineToText(nodes) {
 //   linkResolver  optional function(URL) -> string|null; lets the page turn a
 //                 link to another lesson into an in-site link
 //   headingOffset added to heading levels (the page already has its own h1/h2)
+//   renderQuiz    optional function(jsonText) -> element; draws a ```quiz-json block
 
 export function renderBlocks(blocks, options = {}) {
   const fragment = document.createDocumentFragment();
@@ -475,13 +480,12 @@ function renderBlock(block, options) {
       p.append(renderInline(block.children, options));
       return p;
     }
-    case "code": {
-      const pre = document.createElement("pre");
-      const code = document.createElement("code");
-      code.textContent = block.text;
-      pre.append(code);
-      return pre;
-    }
+    case "code":
+      return renderCodeBlock(block.text);
+    case "quiz":
+      // The page supplies options.renderQuiz. Without it (for example when
+      // markdown.js is used alone) the block is shown as ordinary code.
+      return options.renderQuiz ? options.renderQuiz(block.text) : renderCodeBlock(block.text);
     case "hr":
       return document.createElement("hr");
     case "quote": {
@@ -496,6 +500,14 @@ function renderBlock(block, options) {
     default:
       return document.createDocumentFragment();
   }
+}
+
+function renderCodeBlock(text) {
+  const pre = document.createElement("pre");
+  const code = document.createElement("code");
+  code.textContent = text;
+  pre.append(code);
+  return pre;
 }
 
 function renderList(block, options) {
