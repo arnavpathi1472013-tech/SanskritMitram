@@ -1,5 +1,6 @@
 
 # 📚 कक्षा अष्टमी — संस्कृत पाठ्यपुस्तकम्
+#keywords: class 8, 8, book, deepakam, book pdf
 
 Explore the official NCERT Sanskrit textbook chapter by chapter.
 
