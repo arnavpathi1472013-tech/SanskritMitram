@@ -1,4 +1,4 @@
-<div align="center"> <img src="../assets/ganesh.svg" alt="श्री गणेश" width="150"> 
+<div align="center"> <img src="/SanskritMitram/assets/ganesh.svg" alt="श्री गणेश" width="150"> 
 
   # श्री गणेश प्रार्थना 
   
