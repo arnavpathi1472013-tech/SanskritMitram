@@ -20,6 +20,20 @@
   ],
   "lessons": [
     {
+      "id": "vyakaran/Prashna Nirmanam.pdf",
+      "title": "Prashna Nirmanam",
+      "type": "pdf",
+      "category": "vyakaran",
+      "sectionPath": [
+        "vyakaran"
+      ],
+      "sectionLabels": [
+        "Grammar"
+      ],
+      "path": "vyakaran/Prashna Nirmanam.pdf",
+      "keywords": []
+    },
+    {
       "id": "textbook/grade-8/Class-8.md",
       "title": "📚 कक्षा अष्टमी — संस्कृत पाठ्यपुस्तकम्",
       "type": "markdown",
