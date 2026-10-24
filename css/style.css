@@ -10,6 +10,12 @@
   --accent-soft: #fbefd5;
   --pdf: #a3262e;
   --pdf-soft: #fbe4e5;
+  --navy: #14285a;         /* logo navy, darkened a little for strong text contrast */
+  --navy-deep: #0d1b40;
+  --gold: #f0b429;         /* logo gold: bars, rules, the active menu item */
+  --gold-deep: #a96a00;    /* gold dark enough to read as large text on white */
+  --gold-light: #ffd878;
+  --font-royal: "Rozha One", "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", "Sanskrit Text", Kokila, Mangal, serif;
   --font: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Devanagari", "Nirmala UI", Mangal,
     sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -50,17 +56,58 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* ---- Header ---- */
+/* White brand area (the logo has a transparent background and navy lettering,
+   so it needs a light surface), then a navy menu bar with gold accents. */
 
 .site-header {
-  background: #E9E4F5;
-  color: #172554;
-  padding: 1.5rem 1rem 1.25rem;
+  background: #fff;
   text-align: center;
-  border-bottom: 4px solid var(--accent);
+  border-top: 6px solid var(--gold);
 }
-```
-.site-name { margin: 0; font-size: 2.1rem; line-height: 1.3; font-weight: 700; }
-.site-tagline { margin: 0.25rem 0 0; color: #c9cee6; font-size: 0.95rem; }
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1rem 1.1rem;
+}
+
+.site-logo {
+  display: block;
+  width: min(100%, 22rem);   /* big and centred; shrinks on small phones */
+  height: auto;
+  margin: 0 auto;
+}
+
+.site-name {
+  margin: -0.5rem 0 0;       /* the logo has empty margin at the bottom */
+  font-family: var(--font-royal);
+  font-weight: 400;          /* Rozha One has one weight; do not fake bold */
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+  text-shadow: 0 2px 0 rgba(240, 180, 41, 0.45);
+}
+.site-name-second { color: var(--gold-deep); }  /* echoes the logo: navy + gold */
+
+/* A gold rule with a diamond in the middle, drawn by CSS (no extra image). */
+.site-name::after {
+  content: "\25C6";                 /* a solid diamond character */
+  display: block;
+  width: min(16rem, 75%);
+  margin: 0.2rem auto 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-shadow: none;
+  color: var(--gold);
+  background:
+    linear-gradient(var(--gold), var(--gold)) left center / calc(50% - 1rem) 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) right center / calc(50% - 1rem) 2px no-repeat;
+}
+
+.site-tagline { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
 
 /* ---- Page ---- */
 
@@ -171,7 +218,6 @@ h4.group-title, h5.group-title, h6.group-title { font-size: 1.05rem; color: var(
 .lesson-content th { background: var(--accent-soft); }
 
 @media (max-width: 30rem) {
-  .site-name { font-size: 1.7rem; }
   .lesson-title { font-size: 1.6rem; }
 }
 
@@ -179,24 +225,29 @@ h4.group-title, h5.group-title, h6.group-title { font-size: 1.05rem; color: var(
    Navigation, buttons
    ===================================================================== */
 
+/* Menu bar: white text on navy (very high contrast); the current page is a gold pill. */
 .site-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.25rem 0.5rem;
-  margin-top: 0.9rem;
+  gap: 0.35rem 0.6rem;
+  padding: 0.7rem 1rem;
+  background: var(--navy);
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--navy-deep);
 }
 .site-nav a {
   color: #fff;
   text-decoration: none;
-  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
   border-radius: 999px;
   border: 2px solid transparent;
 }
-.site-nav a:hover { border-color: #c9cee6; }
-.site-nav a[aria-current="page"] { background: #fff; color: var(--ink); font-weight: 600; }
-.site-nav a:focus-visible { outline-color: #fff; }
-.nav-en { font-size: 0.85em; opacity: 0.85; }
+.site-nav a:hover { border-color: var(--gold); }
+.site-nav a[aria-current="page"] { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+.site-nav a:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; }
+.nav-en { font-size: 0.85em; font-weight: 400; opacity: 0.9; }
 
 .button {
   display: inline-block;
