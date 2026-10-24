@@ -1,0 +1,74 @@
+name: Generate lesson catalogue
+
+on:
+  push:
+    # Run only when something that affects the catalogue changes.
+    # The [mM][dD] / [pP][dD][fF] patterns match any capitalisation of the
+    # extension (path filters are case-sensitive).
+    # data/lessons.json is deliberately NOT listed here, so the bot's own
+    # commit can never start another run.
+    paths:
+      - "**/*.[mM][dD]"
+      - "**/*.[pP][dD][fF]"
+      - "scripts/generate_lessons.py"
+      - ".github/workflows/generate-lessons.yml"
+  workflow_dispatch: # adds a "Run workflow" button in the Actions tab
+
+# Nothing in the workflow gets any permission unless it is listed.
+permissions: {}
+
+# If two pushes arrive close together, run one after the other, not at once.
+concurrency:
+  group: generate-lessons-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    # Only act on the publishing branch. By default that is the repository's
+    # default branch (whatever it is called). To use another branch, create a
+    # repository variable named PUBLISH_BRANCH (Settings > Secrets and
+    # variables > Actions > Variables) with that branch name.
+    if: github.ref_name == (vars.PUBLISH_BRANCH || github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write # needed only to push data/lessons.json
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Generate and publish the catalogue
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            python3 scripts/generate_lessons.py
+
+            # --porcelain also reports a brand-new (untracked) file.
+            if [ -z "$(git status --porcelain -- data/lessons.json)" ]; then
+              echo "Catalogue unchanged - nothing to commit."
+              exit 0
+            fi
+
+            git add data/lessons.json
+            git commit -m "chore: update lesson catalogue [skip ci]"
+
+            if git push origin "HEAD:${BRANCH}"; then
+              echo "Catalogue pushed."
+              exit 0
+            fi
+
+            echo "Push failed (attempt ${attempt}). Starting again from the latest branch state."
+            git fetch origin "${BRANCH}"
+            git reset --hard "origin/${BRANCH}"
+          done
+
+          echo "::error::Could not push data/lessons.json after 3 attempts. See the 'Troubleshooting' notes."
+          exit 1
