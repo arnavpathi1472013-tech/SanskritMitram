@@ -1,5 +1,46 @@
 {
   "version": 1,
-  "categories": [],
-  "lessons": []
+  "categories": [
+    {
+      "id": "vyakaran",
+      "label": "Grammar"
+    },
+    {
+      "id": "textbook",
+      "label": "Textbooks"
+    },
+    {
+      "id": "stories",
+      "label": "Stories"
+    },
+    {
+      "id": "shlokas",
+      "label": "Shlokas"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "shlokas/vakratunda-mahakaya.md",
+      "title": "श्री गणेश प्रार्थना",
+      "type": "markdown",
+      "category": "shlokas",
+      "sectionPath": [
+        "shlokas"
+      ],
+      "sectionLabels": [
+        "Shlokas"
+      ],
+      "path": "shlokas/vakratunda-mahakaya.md",
+      "keywords": [
+        "ganesh",
+        "shubharambh",
+        "vakratunda mahakaya",
+        "ganesh aarti",
+        "ganesh mantra",
+        "shloka",
+        "easy shloka",
+        "ganesh vandana"
+      ]
+    }
+  ]
 }
