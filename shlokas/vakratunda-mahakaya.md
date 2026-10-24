@@ -1,17 +1,21 @@
-<div align="center">
-  <img src="../assets/ganesh.svg" alt="श्री गणेश" width="150">
+<div align="center"> <img src="../assets/ganesh.svg" alt="श्री गणेश" width="150"> 
 
-  # श्री गणेश प्रार्थना
-  #keywords: ganesh, shubharambh, vakratunda mahakaya, ganesh aarti, ganesh mantra, shloka, easy shloka, ganesh vandana 
+  # श्री गणेश प्रार्थना 
   
-  ## वक्रतुण्ड महाकाय
+#keywords: ganesh, shubharambh, vakratunda mahakaya, ganesh aarti, ganesh mantra, shloka, easy shloka, ganesh vandana 
 
-  **Sanskrit-Mitram · श्लोक-मञ्जूषा**
+## वक्रतुण्ड महाकाय 
+
+**Sanskrit-Mitram · श्लोक-मञ्जूषा** 
 </div>
+
+**श्रेणी:** श्लोकाः  
+**विषयः:** श्रीगणेशप्रार्थना  
+**स्तरः:** प्रारम्भिकः
 
 ---
 
-## मूलश्लोकः
+## १. मूलश्लोकः
 
 <div align="center">
 
@@ -21,167 +25,237 @@
 
 </div>
 
-### पदच्छेदः
+## २. पदच्छेदः
 
 वक्रतुण्ड । महाकाय । सूर्यकोटिसमप्रभ । निर्विघ्नम् । कुरु । मे । देव । सर्वकार्येषु । सर्वदा ॥
 
-### शब्दार्थः — संस्कृतेन
+## ३. शब्दार्थः — संस्कृतेन
 
 | शब्दः | अर्थः |
 |---|---|
-| वक्रतुण्ड | वक्रः तुण्डः यस्य सः; वक्रशुण्डाधारी |
+| वक्रतुण्ड | वक्रः तुण्डः यस्य सः |
 | महाकाय | विशालं शरीरं यस्य सः |
-| सूर्यकोटिसमप्रभ | कोटिसूर्याणां तेजसा समानं तेजः यस्य सः |
+| सूर्यकोटिसमप्रभ | कोटिसूर्याणां तेजसा समानः |
 | निर्विघ्नम् | विघ्नरहितम् |
-| कुरु | विधेहि, सम्पादय |
+| कुरु | विधेहि |
 | मे | मम |
-| देव | हे देव! |
+| देव | हे देव |
 | सर्वकार्येषु | सर्वेषु कार्येषु |
 | सर्वदा | सर्वस्मिन् काले |
 
----
+## ४. भावार्थः — संस्कृतेन
 
-## भावार्थः — संस्कृतेन
+हे श्रीगणेश! भवतः तुण्डः वक्रः अस्ति, भवतः शरीरं विशालम् अस्ति, भवतः तेजः कोटिसूर्याणां तेजसा समानम् अस्ति। हे देव! मम सर्वाणि कार्याणि सर्वदा विघ्नरहितानि कुरु।
 
-हे वक्रशुण्ड! हे विशालकाय! हे कोटिसूर्यसमानतेजस्विन् गणेश! हे देव! कृपया मम सर्वाणि कार्याणि सर्वदा विघ्नरहितानि कुरु।
+## ५. हिन्दी अर्थ
 
-अस्य श्लोकस्य भावः अस्ति यत् वयं श्रीगणेशं श्रद्धया प्रार्थयामः, यत् सः अस्माकं कार्येषु आगच्छन्तः विघ्नान् दूरीकृत्य कार्याणि सफलतया कर्तुं साहाय्यं करोतु।
+हे वक्र सूँड वाले, विशाल शरीर वाले और करोड़ों सूर्यों के समान तेजस्वी श्रीगणेश! हे देव, मेरे सभी कार्यों को सदैव विघ्नों से रहित कीजिए।
 
----
+## ६. Meaning in English
 
-## हिन्दी अर्थ
+O Lord Ganesha, with your curved trunk, mighty form, and radiance equal to millions of suns, please bless me so that all my undertakings may proceed without obstacles, always.
 
-हे वक्र सूँड वाले, विशाल शरीर वाले और करोड़ों सूर्यों के समान तेजस्वी भगवान गणेश! हे देव! कृपया मेरे सभी कार्यों को सदा विघ्नों से रहित कीजिए।
+## ७. शब्द-दर-शब्द अर्थ
 
-**भाव:** इस श्लोक में भक्त भगवान गणेश से प्रार्थना करता है कि वे जीवन के कार्यों में आने वाली बाधाओं को दूर करें और कार्यों को सफलतापूर्वक पूरा करने में सहायता करें।
+| संस्कृत शब्द | हिन्दी अर्थ | English meaning |
+|---|---|---|
+| वक्रतुण्ड | वक्र सूँड वाले | One with a curved trunk |
+| महाकाय | विशाल शरीर वाले | One with a mighty form |
+| सूर्यकोटिसमप्रभ | करोड़ों सूर्यों के समान तेजस्वी | Radiant like millions of suns |
+| निर्विघ्नम् | बिना किसी बाधा के | Without obstacles |
+| कुरु | कीजिए | Please make |
+| मे | मेरे | My / for me |
+| देव | हे देव | O Lord |
+| सर्वकार्येषु | सभी कार्यों में | In all undertakings |
+| सर्वदा | सदैव | Always |
 
----
+## ८. उच्चारण-सहायता
 
-## Meaning in English
+श्लोक को धीरे-धीरे पढ़ें और प्रत्येक पंक्ति का स्पष्ट उच्चारण करें।
 
-O Lord Ganesha, with your curved trunk, mighty form, and radiance equal to millions of suns, please bless me by making all my undertakings free from obstacles, always.
+- वक्रतुण्ड — वक्र-तुण्ड
+- महाकाय — महा-काय
+- सूर्यकोटिसमप्रभ — सूर्य-कोटि-सम-प्रभ
+- निर्विघ्नम् — निर्-विघ्नम्
+- सर्वकार्येषु — सर्व-कार्येषु
 
-**Essence:** This prayer expresses devotion to Lord Ganesha and asks for guidance, strength, and freedom from obstacles in one's endeavours.
+**अभ्यासः:** प्रथमं प्रत्येकं पदं पठन्तु। अनन्तरं सम्पूर्णं श्लोकं त्रिवारं पठन्तु।
 
----
+## ९. उपयोगः — When Is This Shloka Recited?
 
-## शब्द-दर-शब्द अर्थ
+यह श्लोक प्रायः श्रीगणेश की प्रार्थना के रूप में पढ़ा जाता है।
 
-| संस्कृत पद | English meaning |
-|---|---|
-| वक्रतुण्ड | One with a curved trunk |
-| महाकाय | One with a mighty or great form |
-| सूर्यकोटिसमप्रभ | Radiant like millions of suns |
-| निर्विघ्नम् | Without obstacles |
-| कुरु | Make; grant |
-| मे | For me; my |
-| देव | O Lord |
-| सर्वकार्येषु | In all undertakings |
-| सर्वदा | Always |
+इसे विशेष रूप से इन अवसरों पर पढ़ सकते हैं:
 
----
+- अध्ययन आरम्भ करने से पहले।
+- किसी नए कार्य या परियोजना की शुरुआत में।
+- पूजा-पाठ के समय।
+- किसी कार्य में सफलता और बाधाओं से मुक्ति की प्रार्थना करते समय।
 
-## उच्चारण-सहायता
+यह श्लोक भक्तिभाव, एकाग्रता और शुभारम्भ के सांस्कृतिक महत्त्व को व्यक्त करता है।
 
-**श्लोक को धीरे-धीरे पढ़ें:**
+## १०. उत्पत्तिः एवं सांस्कृतिकं महत्त्वम्
 
-वक्रतुण्ड महाकाय ।  
-सूर्यकोटिसमप्रभ ।  
-निर्विघ्नं कुरु मे देव ।  
-सर्वकार्येषु सर्वदा ॥
+यह श्लोक हिन्दू भक्ति-परम्परा में श्रीगणेश की प्रसिद्ध प्रार्थनाओं में से एक है। श्रीगणेश को अनेक परम्पराओं में विघ्नों को दूर करने वाले तथा शुभारम्भ के देवता के रूप में पूजा जाता है।
 
----
+इस प्रार्थना में भक्त श्रीगणेश से अपने सभी कार्यों को बाधारहित बनाने की विनती करता है।
 
-## उपयोगः — When Is This Shloka Recited?
-
-यह श्लोक सामान्यतः भगवान गणेश की प्रार्थना के रूप में पढ़ा जाता है।
-
-Common occasions include:
-
-- **विद्यारम्भः** — when beginning studies or learning something new.
-- **कार्यप्रारम्भः** — before starting an important task.
-- **पूजा** — during devotional worship of Lord Ganesha.
-- **परीक्षायाः पूर्वम्** — as a personal prayer before an examination.
-- **मङ्गलकार्याणि** — at the beginning of auspicious occasions.
-
-भगवान गणेश को हिन्दू परम्परा में विघ्नहर्ता अर्थात् बाधाओं को दूर करने वाले देवता के रूप में पूजा जाता है।
+इस श्लोक के रचयिता तथा इसके सबसे प्राचीन लिखित स्रोत के विषय में यहाँ कोई निश्चित दावा नहीं किया जा रहा है।
 
 ---
 
-## 📚 उत्पत्तिः एवं सांस्कृतिकं महत्त्वम्
+## ११. प्रश्नोत्तरी — स्वयम् परीक्ष्यताम्!
 
-### Origin and cultural significance
+इस श्लोक को पढ़ने के बाद अपनी समझ जाँचिए। सभी प्रश्नों के उत्तर चुनकर **Submit Quiz** दबाइए। परिणाम में आपका अंक, सही उत्तर, गलत उत्तर और अनुत्तरित प्रश्न दिखाई देंगे।
 
-This verse is a traditional Sanskrit prayer addressed to Lord Ganesha. It is widely recited in devotional and educational settings, especially before beginning an activity.
-
-The verse praises three characteristics of Ganesha:
-
-1. **वक्रतुण्डः** — His distinctive curved trunk.
-2. **महाकायः** — His great and mighty form.
-3. **सूर्यकोटिसमप्रभः** — His extraordinary brilliance.
-
-The prayer then asks the deity to make the devotee's undertakings free from obstacles.
-
-**Historical note:** The verse is widely transmitted through devotional tradition, but its precise original author and earliest textual source are not firmly established here. It is therefore better not to attribute it to a particular ancient scripture without a verifiable reference.
+```quiz-json
+{
+  "id": "vakratunda-mahakaya-quiz-v1",
+  "title": "वक्रतुण्ड महाकाय — प्रश्नोत्तरी",
+  "version": 1,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_select",
+      "question": "अस्य श्लोकस्य सम्बन्धः केन देवेन अस्ति?",
+      "options": [
+        {
+          "id": "a",
+          "text": "श्रीविष्णुना"
+        },
+        {
+          "id": "b",
+          "text": "श्रीगणेशेन"
+        },
+        {
+          "id": "c",
+          "text": "भगवता शिवेन"
+        },
+        {
+          "id": "d",
+          "text": "देव्या सरस्वत्या"
+        }
+      ],
+      "correctAnswer": "b",
+      "explanation": "अयं श्लोकः श्रीगणेशस्य प्रार्थना अस्ति।"
+    },
+    {
+      "id": "q2",
+      "type": "single_select",
+      "question": "वक्रतुण्ड इत्यस्य हिन्दी अर्थः कः?",
+      "options": [
+        {
+          "id": "a",
+          "text": "विशाल शरीर वाले"
+        },
+        {
+          "id": "b",
+          "text": "तेजस्वी"
+        },
+        {
+          "id": "c",
+          "text": "वक्र सूँड वाले"
+        },
+        {
+          "id": "d",
+          "text": "सर्वज्ञ"
+        }
+      ],
+      "correctAnswer": "c",
+      "explanation": "वक्रतुण्ड का अर्थ है वक्र सूँड वाले।"
+    },
+    {
+      "id": "q3",
+      "type": "single_select",
+      "question": "सूर्यकोटिसमप्रभ इत्यस्य भावः कः?",
+      "options": [
+        {
+          "id": "a",
+          "text": "करोड़ों सूर्यों के समान तेजस्वी"
+        },
+        {
+          "id": "b",
+          "text": "चन्द्रमा के समान शीतल"
+        },
+        {
+          "id": "c",
+          "text": "पर्वत के समान विशाल"
+        },
+        {
+          "id": "d",
+          "text": "समुद्र के समान गम्भीर"
+        }
+      ],
+      "correctAnswer": "a",
+      "explanation": "सूर्यकोटिसमप्रभ का अर्थ करोड़ों सूर्यों के समान तेजस्वी है।"
+    },
+    {
+      "id": "q4",
+      "type": "single_select",
+      "question": "निर्विघ्नम् इत्यस्य अर्थः कः?",
+      "options": [
+        {
+          "id": "a",
+          "text": "शीघ्रता से"
+        },
+        {
+          "id": "b",
+          "text": "बिना बाधाओं के"
+        },
+        {
+          "id": "c",
+          "text": "बार-बार"
+        },
+        {
+          "id": "d",
+          "text": "प्रसन्नतापूर्वक"
+        }
+      ],
+      "correctAnswer": "b",
+      "explanation": "निर्विघ्नम् का अर्थ है विघ्नों या बाधाओं से रहित।"
+    },
+    {
+      "id": "q5",
+      "type": "single_select",
+      "question": "श्लोके भक्तः श्रीगणेशं किमर्थं प्रार्थयते?",
+      "options": [
+        {
+          "id": "a",
+          "text": "सर्वकार्याणि विघ्नरहितानि कर्तुम्"
+        },
+        {
+          "id": "b",
+          "text": "केवलं धनं प्राप्तुम्"
+        },
+        {
+          "id": "c",
+          "text": "वर्षां निवारयितुम्"
+        },
+        {
+          "id": "d",
+          "text": "रात्रिं दीर्घां कर्तुम्"
+        }
+      ],
+      "correctAnswer": "a",
+      "explanation": "भक्तः स्वस्य सर्वाणि कार्याणि विघ्नरहितानि भवन्तु इति प्रार्थयते।"
+    }
+  ]
+}
+```
 
 ---
 
-## ज्ञान-परीक्षा — Quick Quiz
-
-**१. वक्रतुण्डः कः अस्ति?**
-
-- A. भगवान् शिवः
-- B. भगवान् गणेशः
-- C. भगवान् विष्णुः
-- D. भगवान् सूर्यः
-
-**२. 'महाकाय' इत्यस्य अर्थः कः?**
-
-- A. विशालकायः
-- B. लघुकायः
-- C. दुःखी
-- D. वेगवान्
-
-**३. 'निर्विघ्नम्' इत्यस्य अर्थः कः?**
-
-- A. विघ्नयुक्तम्
-- B. विघ्नरहितम्
-- C. कठिनम्
-- D. अपूर्णम्
-
-**४. 'सर्वदा' इत्यस्य अर्थः कः?**
-
-- A. कदाचित्
-- B. अद्य
-- C. सदा
-- D. श्वः
-
-<details>
-<summary><strong>उत्तराणि पश्यन्तु — Show Answers</strong></summary>
-
-1. B — भगवान् गणेशः
-2. A — विशालकायः
-3. B — विघ्नरहितम्
-4. C — सदा
-
-</details>
-
----
-
-## उपसंहारः
-
+## १२. उपसंहारः
 अयं श्लोकः श्रद्धायाः, शुभारम्भस्य, सकारात्मकचिन्तनस्य च सन्देशं ददाति।
 
-**शुभारम्भः भवतु!**
+शुभारम्भः भवतु!
 
-*May every new beginning be guided by wisdom and devotion.*
-
----
+May every new beginning be guided by wisdom and devotion.
 
 <div align="center">
 
-**संस्कृत-मित्रम् · Sanskrit-Mitram**
+संस्कृत-मित्रम् · Sanskrit-Mitram
 
-*संस्कृतं पठामः, संस्कृतं वदामः, संस्कृतं जानीमः।*
+संस्कृतं पठामः, संस्कृतं वदामः, संस्कृतं जानीमः।
 
 </div>
