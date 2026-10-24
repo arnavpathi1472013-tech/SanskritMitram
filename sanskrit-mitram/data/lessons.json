@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "vyakaran",
+      "label": "Grammar"
+    },
+    {
+      "id": "textbook",
+      "label": "Textbooks"
+    },
+    {
+      "id": "stories",
+      "label": "Stories"
+    },
+    {
+      "id": "shlokas",
+      "label": "Shlokas"
+    }
+  ],
+  "lessons": []
+}
