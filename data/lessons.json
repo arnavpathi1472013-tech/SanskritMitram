@@ -20,17 +20,19 @@
   ],
   "lessons": [
     {
-      "id": "textbook/Class-8.md",
+      "id": "textbook/grade-8/Class-8.md",
       "title": "📚 कक्षा अष्टमी — संस्कृत पाठ्यपुस्तकम्",
       "type": "markdown",
       "category": "textbook",
       "sectionPath": [
-        "textbook"
+        "textbook",
+        "grade-8"
       ],
       "sectionLabels": [
-        "Textbooks"
+        "Textbooks",
+        "Grade 8"
       ],
-      "path": "textbook/Class-8.md",
+      "path": "textbook/grade-8/Class-8.md",
       "keywords": []
     },
     {
