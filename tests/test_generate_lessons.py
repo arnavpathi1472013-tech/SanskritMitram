@@ -101,6 +101,16 @@ class TitleTests(CatalogueTestCase):
         self.add("vyakaran/a.md", "~~~\n#title: Fake\n~~~\n# Real\n")
         self.assertEqual(self.lesson("vyakaran/a.md")["title"], "Real")
 
+    def test_quiz_block_does_not_change_catalogue_entry(self):
+        # Quizzes live inside a ```quiz-json fence, which the generator ignores,
+        # so the title still comes from the real heading and no code change is needed.
+        quiz = '```quiz-json\n{"id": "q-1", "title": "T", "questions": []}\n```\n'
+        self.add("vyakaran/with-quiz.md", "Intro\n\n" + quiz + "\n# Real Title\n#keywords: sandhi\n")
+        found = self.lesson("vyakaran/with-quiz.md")
+        self.assertEqual(found["title"], "Real Title")
+        self.assertEqual(found["keywords"], ["sandhi"])
+        self.assertEqual(set(found), {"id", "title", "type", "category", "sectionPath", "sectionLabels", "path", "keywords"})
+
     def test_devanagari_heading(self):
         self.add("vyakaran/sandhi.md", "# सन्धिः\n")
         self.assertEqual(self.lesson("vyakaran/sandhi.md")["title"], "सन्धिः")
