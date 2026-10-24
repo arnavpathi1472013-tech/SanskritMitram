@@ -20,6 +20,20 @@
   ],
   "lessons": [
     {
+      "id": "textbook/Class 8.md",
+      "title": "📚 कक्षा अष्टमी — संस्कृत पाठ्यपुस्तकम्",
+      "type": "markdown",
+      "category": "textbook",
+      "sectionPath": [
+        "textbook"
+      ],
+      "sectionLabels": [
+        "Textbooks"
+      ],
+      "path": "textbook/Class 8.md",
+      "keywords": []
+    },
+    {
       "id": "shlokas/vakratunda-mahakaya.md",
       "title": "श्री गणेश प्रार्थना",
       "type": "markdown",
