@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>संस्कृत-मित्रम् | Sanskrit-Mitram</title>
   <meta name="description" content="Sanskrit lessons, textbooks, stories and shlokas for Classes 6 to 8.">
+  <meta name="theme-color" content="#14285a">
   <!-- All local paths are relative (no leading "/") so the site works at
        https://username.github.io/repository/ -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <!-- Heading font: Rozha One, a bold Devanagari display typeface (free, SIL Open Font License). -->
+  <!-- Fonts (free, SIL Open Font License), both with Devanagari letters:
+       Rozha One for headings, Noto Serif Devanagari for reading text. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Rozha+One&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,7 +35,7 @@
   <main class="page">
     <!-- The lesson list -->
     <section id="catalogue-view" aria-labelledby="lessons-heading">
-      <h2 id="lessons-heading" class="visually-hidden">Lessons</h2>
+      <h2 id="lessons-heading" class="section-title"><span lang="sa">पाठाः</span> <span class="section-en">Lessons</span></h2>
       <div id="status" class="message" role="status" aria-live="polite"><p>Loading lessons…</p></div>
       <div id="catalogue"></div>
     </section>
@@ -55,6 +57,13 @@
       <p class="message" data-kind="error">This site needs JavaScript to show the lessons.</p>
     </noscript>
   </main>
+
+  <footer class="site-footer">
+    <!-- A well-known subhashita (Hitopadesha). Change or remove freely. -->
+    <p class="footer-verse" lang="sa">विद्या ददाति विनयं विनयाद् याति पात्रताम्॥</p>
+    <p class="footer-meaning">Knowledge gives humility; from humility comes worthiness.</p>
+    <p class="footer-tagline">Learn Sanskrit · Explore Literature · Grow Your Mind</p>
+  </footer>
 
   <script type="module" src="js/lessons.js"></script>
 </body>
