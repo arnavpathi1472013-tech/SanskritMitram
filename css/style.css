@@ -1,23 +1,47 @@
-/* Sanskrit-Mitram - minimal styles for the lesson catalogue and lesson viewer. */
+/* =========================================================================
+   Sanskrit-Mitram  -  stylesheet
+   Look: warm parchment page, navy and gold (from the logo), a little like an
+   old manuscript. Contents:
+     1. Colours, fonts and basics        5. Messages and buttons
+     2. Header and menu bar              6. Lesson viewer
+     3. Page headings                    7. Quiz and result
+     4. Lesson list                      8. Quiz History, footer, small screens
+   ========================================================================= */
+
+/* ---- 1. Colours, fonts and basics ---------------------------------------- */
 
 :root {
-  --ink: #1d2340;          /* text and header */
-  --ink-soft: #566083;     /* secondary text */
-  --paper: #f8f8fb;        /* page background */
-  --card: #ffffff;
-  --line: #d9dcea;
-  --accent: #b86e00;       /* links and focus: deep marigold */
-  --accent-soft: #fbefd5;
-  --pdf: #a3262e;
-  --pdf-soft: #fbe4e5;
-  --navy: #14285a;         /* logo navy, darkened a little for strong text contrast */
+  --ink: #1d2340;           /* main text: deep navy ink */
+  --ink-soft: #5b5a73;      /* secondary text */
+  --paper: #f6ecd6;         /* page: parchment */
+  --paper-deep: #efe0bf;    /* slightly darker parchment */
+  --card: #fffaf0;          /* panels: light vellum */
+  --line: #dcc79b;          /* borders: tan */
+  --line-soft: #ead9b4;
+
+  --navy: #14285a;          /* logo navy, a little darker for strong contrast */
   --navy-deep: #0d1b40;
-  --gold: #f0b429;         /* logo gold: bars, rules, the active menu item */
-  --gold-deep: #a96a00;    /* gold dark enough to read as large text on white */
-  --gold-light: #ffd878;
+  --gold: #f0b429;          /* logo gold: bars, rules, highlights */
+  --gold-deep: #a96a00;     /* for LARGE gold text only */
+  --gold-text: #8f5700;     /* gold dark enough for small text */
+  --gold-light: #ffd878;    /* gold on navy */
+  --gold-soft: #fbe9b7;     /* pale gold backgrounds */
+
+  --link: #8a4f00;
+  --maroon: #8e2b2b;        /* PDFs, errors, delete */
+  --maroon-soft: #f6ddd6;
+  --ok: #2c6a3a;
+  --ok-soft: #e6f0d6;
+  --none: #6a5c46;
+  --none-soft: #efe6d2;
+
+  /* Heading font: a bold Devanagari display face. Others are Devanagari fonts
+     already found on many devices, used if the first one cannot load. */
   --font-royal: "Rozha One", "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", "Sanskrit Text", Kokila, Mangal, serif;
-  --font: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Devanagari", "Nirmala UI", Mangal,
-    sans-serif;
+  /* Reading font for lessons and lists. */
+  --font-read: "Noto Serif Devanagari", "Sanskrit Text", Kokila, "Nirmala UI", Mangal, Georgia, "Times New Roman", serif;
+  /* Plain, very readable font for buttons, menu and small labels. */
+  --font-ui: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Devanagari", "Nirmala UI", Mangal, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -27,18 +51,23 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
   color: var(--ink);
-  font-family: var(--font);
+  font-family: var(--font-read);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.75;
+  background-color: var(--paper);
+  /* Soft light at the top, plus very faint horizontal lines like the strings
+     of a palm-leaf manuscript. Pure CSS, no image to download. */
+  background-image:
+    radial-gradient(ellipse 120% 70% at 50% 0%, rgba(255, 251, 238, 0.95), rgba(246, 236, 214, 0) 65%),
+    repeating-linear-gradient(0deg, rgba(120, 85, 20, 0.035) 0 1px, transparent 1px 5px);
 }
 
-a { color: var(--accent); text-underline-offset: 0.18em; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: var(--link); text-underline-offset: 0.18em; }
+a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--navy);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -55,14 +84,15 @@ a:hover { text-decoration-thickness: 2px; }
   border: 0;
 }
 
-/* ---- Header ---- */
-/* White brand area (the logo has a transparent background and navy lettering,
-   so it needs a light surface), then a navy menu bar with gold accents. */
+/* ---- 2. Header and menu bar ---------------------------------------------- */
+/* Warm white brand area (the logo is transparent with navy lettering), then a
+   navy menu bar and a band of gold dots, like a manuscript border. */
 
 .site-header {
-  background: #fff;
+  background: #fffbf1;
   text-align: center;
   border-top: 6px solid var(--gold);
+  font-family: var(--font-ui);
 }
 
 .site-brand {
@@ -74,32 +104,36 @@ a:hover { text-decoration-thickness: 2px; }
 
 .site-logo {
   display: block;
-  width: min(100%, 22rem);   /* big and centred; shrinks on small phones */
+  width: min(100%, 22rem);
   height: auto;
   margin: 0 auto;
 }
 
 .site-name {
-  margin: -0.5rem 0 0;       /* the logo has empty margin at the bottom */
+  margin: -0.5rem 0 0;
   font-family: var(--font-royal);
-  font-weight: 400;          /* Rozha One has one weight; do not fake bold */
+  font-weight: 400;          /* the display font has one weight; do not fake bold */
   font-size: clamp(2.6rem, 9vw, 4.4rem);
   line-height: 1.25;
   letter-spacing: 0.01em;
   color: var(--navy);
   text-shadow: 0 2px 0 rgba(240, 180, 41, 0.45);
 }
-.site-name-second { color: var(--gold-deep); }  /* echoes the logo: navy + gold */
+.site-name-second { color: var(--gold-deep); }
 
-/* A gold rule with a diamond in the middle, drawn by CSS (no extra image). */
-.site-name::after {
-  content: "\25C6";                 /* a solid diamond character */
+/* Gold rule with a diamond in the middle (no image needed). Used under the
+   site name and under lesson titles. */
+.site-name::after,
+.lesson-title::after {
+  content: "\25C6";
   display: block;
   width: min(16rem, 75%);
   margin: 0.2rem auto 0;
   font-family: system-ui, sans-serif;
   font-size: 0.8rem;
+  font-weight: 400;
   line-height: 1;
+  text-align: center;
   text-shadow: none;
   color: var(--gold);
   background:
@@ -109,123 +143,6 @@ a:hover { text-decoration-thickness: 2px; }
 
 .site-tagline { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
 
-/* ---- Page ---- */
-
-.page { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
-
-/* ---- Messages (loading / empty / error) ---- */
-
-.message {
-  margin: 0 0 1.5rem;
-  padding: 0.75rem 1rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-left-width: 5px;
-  border-radius: 6px;
-}
-.message p { margin: 0; }
-.message[data-kind="error"] { border-left-color: var(--pdf); }
-.message[data-kind="warning"] { border-left-color: var(--accent); }
-.message[data-kind="loading"],
-.message[data-kind="empty"] { border-left-color: var(--ink-soft); }
-
-.retry-button {
-  margin-top: 0.6rem;
-  padding: 0.4rem 0.9rem;
-  font: inherit;
-  color: var(--ink);
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ---- Lesson list ---- */
-
-.group { margin: 0 0 2rem; }
-.group-title { margin: 0 0 0.5rem; line-height: 1.3; }
-h2.group-title { font-size: 1.5rem; padding-bottom: 0.35rem; border-bottom: 2px solid var(--line); }
-h3.group-title { font-size: 1.2rem; color: var(--ink-soft); margin-top: 1.25rem; }
-h4.group-title, h5.group-title, h6.group-title { font-size: 1.05rem; color: var(--ink-soft); }
-.group .group { margin: 0 0 1.25rem 0.9rem; padding-left: 0.9rem; border-left: 2px solid var(--line); }
-
-.lesson-list { list-style: none; margin: 0; padding: 0; }
-.lesson {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.25rem 0.6rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.lesson-link { font-weight: 600; }
-
-.badge {
-  font-size: 0.78rem;
-  line-height: 1;
-  padding: 0.2rem 0.45rem;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-}
-.badge-markdown { color: var(--accent); background: var(--accent-soft); }
-.badge-pdf { color: var(--pdf); background: var(--pdf-soft); }
-.keywords { flex-basis: 100%; font-size: 0.9rem; color: var(--ink-soft); }
-
-/* ---- Lesson viewer ---- */
-
-.back-link { display: inline-block; margin-bottom: 1rem; font-weight: 600; }
-.lesson-title { margin: 0 0 1rem; font-size: 1.9rem; line-height: 1.3; }
-.lesson-title:focus { outline: none; }
-
-.lesson-content { max-width: 40rem; font-size: 1.125rem; }
-.lesson-content h3 { font-size: 1.45rem; margin: 2rem 0 0.5rem; line-height: 1.3; }
-.lesson-content h4 { font-size: 1.25rem; margin: 1.6rem 0 0.4rem; line-height: 1.3; }
-.lesson-content h5, .lesson-content h6 { font-size: 1.1rem; margin: 1.3rem 0 0.3rem; }
-.lesson-content p { margin: 0 0 1rem; }
-.lesson-content ul, .lesson-content ol { margin: 0 0 1rem; padding-left: 1.5rem; }
-.lesson-content li { margin: 0.2rem 0; }
-.lesson-content img { max-width: 100%; height: auto; }
-.lesson-content hr { border: 0; border-top: 2px solid var(--line); margin: 2rem 0; }
-
-.lesson-content blockquote {
-  margin: 0 0 1rem;
-  padding: 0.25rem 1rem;
-  background: var(--accent-soft);
-  border-left: 4px solid var(--accent);
-  border-radius: 0 6px 6px 0;
-}
-.lesson-content blockquote > :last-child { margin-bottom: 0; }
-
-.lesson-content code {
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  background: #eceef6;
-  padding: 0.1em 0.3em;
-  border-radius: 4px;
-}
-.lesson-content pre {
-  margin: 0 0 1rem;
-  padding: 0.8rem 1rem;
-  overflow-x: auto;
-  background: #eceef6;
-  border-radius: 6px;
-}
-.lesson-content pre code { padding: 0; background: none; }
-
-.table-scroll { overflow-x: auto; margin: 0 0 1rem; }
-.lesson-content table { border-collapse: collapse; min-width: 100%; }
-.lesson-content th, .lesson-content td { padding: 0.45rem 0.7rem; border: 1px solid var(--line); text-align: left; }
-.lesson-content th { background: var(--accent-soft); }
-
-@media (max-width: 30rem) {
-  .lesson-title { font-size: 1.6rem; }
-}
-
-/* =====================================================================
-   Navigation, buttons
-   ===================================================================== */
-
-/* Menu bar: white text on navy (very high contrast); the current page is a gold pill. */
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -234,7 +151,6 @@ h4.group-title, h5.group-title, h6.group-title { font-size: 1.05rem; color: var(
   padding: 0.7rem 1rem;
   background: var(--navy);
   border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--navy-deep);
 }
 .site-nav a {
   color: #fff;
@@ -244,222 +160,513 @@ h4.group-title, h5.group-title, h6.group-title { font-size: 1.05rem; color: var(
   border-radius: 999px;
   border: 2px solid transparent;
 }
-.site-nav a:hover { border-color: var(--gold); }
+.site-nav a:hover { color: #fff; border-color: var(--gold); }
 .site-nav a[aria-current="page"] { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
 .site-nav a:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; }
 .nav-en { font-size: 0.85em; font-weight: 400; opacity: 0.9; }
 
-.button {
+/* Band of gold dots under the menu bar. */
+.site-header::after {
+  content: "";
+  display: block;
+  height: 12px;
+  background:
+    radial-gradient(circle at 7px 6px, var(--gold) 0 2.2px, transparent 2.8px) 0 0 / 14px 12px repeat-x,
+    var(--navy-deep);
+}
+
+/* ---- 3. Page headings ----------------------------------------------------- */
+
+.page { max-width: 48rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+
+.section-title,
+.history-title {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-royal);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+  line-height: 1.3;
+  text-align: center;
+  color: var(--navy);
+}
+.section-title:focus, .history-title:focus { outline: none; }
+.section-en,
+.history-title-en {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- 4. Lesson list ------------------------------------------------------- */
+/* Each top-level section (Grammar, Textbooks ...) is a framed panel with a
+   navy title bar. Lessons are numbered in Devanagari numerals (१, २, ३ ...)
+   by CSS counters, so there is nothing to maintain by hand. */
+
+.group-0 {
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 #fff inset, 0 8px 22px rgba(90, 60, 10, 0.1);
+}
+
+.group-title { margin: 0; line-height: 1.3; }
+
+h2.group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.1rem;
+  font-family: var(--font-royal);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  background: linear-gradient(var(--navy), var(--navy-deep));
+  border-bottom: 3px solid var(--gold);
+}
+h2.group-title::before { content: "\2756"; font-size: 0.9em; color: var(--gold); }  /* ❖ */
+
+h3.group-title,
+h4.group-title,
+h5.group-title,
+h6.group-title {
+  margin: 1.1rem 0 0.2rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-read);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold-soft);
+}
+h3.group-title::before,
+h4.group-title::before,
+h5.group-title::before,
+h6.group-title::before { content: "\25C6\00a0"; font-size: 0.7em; color: var(--gold-deep); vertical-align: 0.1em; }
+
+.group-0 > .lesson-list { margin: 0.4rem 1.1rem 0.4rem; }
+.group-0 > .group { margin: 0 1.1rem 0.4rem; }
+.group .group .group { margin-left: 0.5rem; padding-left: 0.8rem; border-left: 3px solid var(--gold-soft); }
+
+.lesson-list { list-style: none; margin: 0; padding: 0; counter-reset: lesson; }
+
+.lesson {
+  position: relative;               /* lets the whole row act as one big link */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.7rem;
+  padding: 0.75rem 0.5rem 0.75rem 0;
+  border-bottom: 1px dotted var(--line);
+  counter-increment: lesson;
+}
+.lesson:last-child { border-bottom: 0; }
+.lesson::before {
+  content: counter(lesson, devanagari) ".";
+  min-width: 2.1rem;
+  font-weight: 700;
+  color: var(--gold-text);
+  text-align: right;
+}
+.lesson:hover { background: linear-gradient(90deg, var(--gold-soft), rgba(251, 233, 183, 0)); }
+
+.lesson-link {
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.lesson:hover .lesson-link { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--gold); }
+.lesson-link::after { content: ""; position: absolute; inset: 0; }      /* stretched link */
+.lesson-link:focus-visible { outline: none; }
+.lesson-link:focus-visible::after { outline: 3px solid var(--navy); outline-offset: -3px; border-radius: 8px; }
+
+.badge {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.badge-markdown { color: var(--navy); background: var(--gold-soft); }
+.badge-pdf { color: var(--maroon); background: var(--maroon-soft); }
+.keywords {
+  flex-basis: 100%;
+  margin-left: 2.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* ---- 5. Messages and buttons ---------------------------------------------- */
+
+.message {
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-ui);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--navy);
+  border-radius: 8px;
+}
+.message p { margin: 0; }
+.message[data-kind="error"] { border-left-color: var(--maroon); }
+.message[data-kind="warning"] { border-left-color: var(--gold-deep); }
+
+.button,
+.retry-button {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  font: inherit;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-ui);
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--ink);
+  color: var(--navy);
   background: var(--card);
-  border: 2px solid var(--ink);
+  border: 2px solid var(--navy);
   border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
 }
-.button:hover { background: var(--accent-soft); }
+.retry-button { margin-top: 0.6rem; }
+.button:hover, .retry-button:hover { color: var(--navy); background: var(--gold-soft); }
 .button:disabled { opacity: 0.55; cursor: not-allowed; }
-.button-primary { background: var(--ink); color: #fff; }
-.button-primary:hover { background: #2c3560; }
-.button-danger { color: var(--pdf); border-color: var(--pdf); }
-.button-danger:hover { background: var(--pdf-soft); }
+.button-primary { color: #fff; background: var(--navy); box-shadow: 0 3px 0 var(--gold); }
+.button-primary:hover { color: #fff; background: #1d3677; }
+.button-danger { color: var(--maroon); border-color: var(--maroon); }
+.button-danger:hover { color: var(--maroon); background: var(--maroon-soft); }
 .button-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
 
-/* =====================================================================
-   Quiz
-   ===================================================================== */
+/* ---- 6. Lesson viewer ----------------------------------------------------- */
+/* A lesson reads like a folio: a vellum page with a gold top edge. */
 
-:root {
-  --ok: #1d6b3f;
-  --ok-soft: #e2f3e8;
-  --bad: #a3262e;
-  --bad-soft: #fbe4e5;
-  --none: #4d5578;
-  --none-soft: #eceef6;
+#lesson-view {
+  padding: 1.5rem 1.4rem 2.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--gold);
+  border-radius: 6px 6px 12px 12px;
+  box-shadow: 0 8px 22px rgba(90, 60, 10, 0.1);
 }
 
-.quiz-wrapper { margin: 2rem 0; }
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  background: var(--gold-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.back-link:hover { color: var(--navy); border-color: var(--navy); }
 
-.quiz, .quiz-result, .quiz-error {
-  padding: 1.1rem 1.1rem 1.25rem;
+.lesson-title {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-royal);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+  line-height: 1.35;
+  text-align: center;
+  color: var(--navy);
+}
+.lesson-title:focus { outline: none; }
+
+.lesson-content { max-width: 40rem; margin: 0 auto; font-size: 1.15rem; line-height: 1.85; }
+.lesson-content h3 {
+  margin: 2.2rem 0 0.6rem;
+  font-family: var(--font-royal);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.35;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold-soft);
+}
+.lesson-content h4 { margin: 1.8rem 0 0.4rem; font-size: 1.3rem; line-height: 1.4; color: var(--navy); }
+.lesson-content h5, .lesson-content h6 { margin: 1.4rem 0 0.3rem; font-size: 1.1rem; color: var(--navy); }
+.lesson-content p { margin: 0 0 1.1rem; }
+.lesson-content ul, .lesson-content ol { margin: 0 0 1.1rem; padding-left: 1.6rem; }
+.lesson-content li { margin: 0.25rem 0; }
+.lesson-content li::marker { color: var(--gold-text); }
+.lesson-content img { max-width: 100%; height: auto; border-radius: 6px; }
+.lesson-content hr { height: 0; border: 0; border-top: 2px dotted var(--gold); margin: 2.2rem 0; }
+
+/* Block quotes (often shlokas): a framed panel with a gold bar. */
+.lesson-content blockquote {
+  margin: 0 0 1.2rem;
+  padding: 0.5rem 1.1rem;
+  background: var(--gold-soft);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+}
+.lesson-content blockquote > :last-child { margin-bottom: 0; }
+
+.lesson-content code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+.lesson-content pre {
+  margin: 0 0 1.1rem;
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+  background: var(--paper-deep);
+  border-radius: 8px;
+}
+.lesson-content pre code { padding: 0; background: none; }
+
+.table-scroll { overflow-x: auto; margin: 0 0 1.2rem; }
+.lesson-content table { border-collapse: collapse; min-width: 100%; font-size: 1rem; }
+.lesson-content th, .lesson-content td { padding: 0.5rem 0.75rem; border: 1px solid var(--line); text-align: left; }
+.lesson-content th { color: #fff; background: var(--navy); }
+.lesson-content tbody tr:nth-child(even) td { background: #fbf3e0; }
+
+/* ---- 7. Quiz and result --------------------------------------------------- */
+
+.quiz-wrapper { margin: 2.2rem 0; font-family: var(--font-read); }
+
+/* Quiz and result panels get a double frame: navy outside, gold inside. */
+.quiz,
+.quiz-result {
+  padding: 1.3rem 1.2rem 1.4rem;
   background: var(--card);
-  border: 2px solid var(--line);
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--gold);
+}
+.quiz-error {
+  padding: 1.1rem 1.2rem 1.25rem;
+  background: var(--maroon-soft);
+  border: 2px solid var(--maroon);
   border-radius: 12px;
 }
-.quiz-title { margin: 0 0 0.4rem; font-size: 1.4rem; line-height: 1.3; }
+.quiz-error-title { margin: 0 0 0.4rem; font-size: 1.2rem; }
+.quiz-error-list { margin: 0.4rem 0 0; padding-left: 1.3rem; }
+
+.quiz-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-royal);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1.4;
+  color: var(--navy);
+}
 .quiz-intro { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 1rem; }
 .quiz-previous { margin: 0 0 0.6rem; font-size: 0.95rem; }
 .quiz-progress {
   position: sticky;
   top: 0;
   z-index: 1;
-  margin: 0 0 1rem;
-  padding: 0.4rem 0.7rem;
+  margin: 0 0 1.1rem;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
   font-weight: 600;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-deep);
   border-radius: 8px;
 }
 
-.quiz-question { margin: 0 0 1.4rem; padding: 0; border: 0; min-width: 0; }
-.quiz-question-text { padding: 0; margin-bottom: 0.6rem; display: block; width: 100%; }
-.question-number { display: block; font-size: 0.85rem; color: var(--ink-soft); }
-.question-body { display: block; font-weight: 600; font-size: 1.15rem; white-space: pre-line; }
+.quiz-question { margin: 0 0 1.5rem; padding: 0; border: 0; min-width: 0; }
+.quiz-question-text { padding: 0; margin-bottom: 0.7rem; display: block; width: 100%; }
+.question-number {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+.question-body { display: block; font-weight: 700; font-size: 1.15rem; line-height: 1.6; white-space: pre-line; }
 
 .quiz-option {
   position: relative;
   display: flex;
   align-items: flex-start;
-  gap: 0.7rem;
-  margin: 0 0 0.5rem;
-  padding: 0.65rem 0.8rem;
-  background: var(--card);
+  gap: 0.75rem;
+  margin: 0 0 0.55rem;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
   border: 2px solid var(--line);
   border-radius: 10px;
   cursor: pointer;
 }
-.quiz-option:hover { border-color: var(--ink-soft); }
-/* The real radio button stays in the page (so keyboards and screen readers
-   work) but is drawn as the round mark next to it. */
-.option-input {
-  position: absolute;
-  opacity: 0;
-  width: 1.4rem;
-  height: 1.4rem;
-  margin: 0;
-}
+.quiz-option:hover { border-color: var(--navy); background: #fffdf6; }
+/* The real radio button stays on the page (so keyboards and screen readers
+   work) but is drawn as the round mark beside the text. */
+.option-input { position: absolute; opacity: 0; width: 1.4rem; height: 1.4rem; margin: 0; }
 .option-mark {
   flex: none;
   width: 1.4rem;
   height: 1.4rem;
-  margin-top: 0.1rem;
-  border: 2px solid var(--ink);
+  margin-top: 0.2rem;
+  border: 2px solid var(--navy);
   border-radius: 50%;
   background: #fff;
 }
 .option-text { white-space: pre-line; }
-.quiz-option.is-selected { border: 3px solid var(--ink); padding: calc(0.65rem - 1px) calc(0.8rem - 1px); background: var(--accent-soft); font-weight: 600; }
-.option-input:checked + .option-mark { background: radial-gradient(circle, var(--ink) 0 45%, #fff 50%); }
-.option-input:focus-visible + .option-mark { outline: 3px solid var(--accent); outline-offset: 3px; }
+.quiz-option.is-selected {
+  padding: calc(0.7rem - 1px) calc(0.9rem - 1px);
+  background: var(--gold-soft);
+  border: 3px solid var(--navy);
+  font-weight: 700;
+}
+.option-input:checked + .option-mark { background: radial-gradient(circle, var(--navy) 0 45%, #fff 50%); }
+.option-input:focus-visible + .option-mark { outline: 3px solid var(--navy); outline-offset: 3px; }
 
 .quiz-confirm {
   margin: 0 0 1rem;
-  padding: 0.8rem 1rem;
-  background: var(--accent-soft);
-  border: 2px solid var(--accent);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-ui);
+  background: var(--gold-soft);
+  border: 2px solid var(--gold-deep);
   border-radius: 10px;
 }
 .quiz-confirm p { margin: 0 0 0.4rem; }
 .quiz-confirm-title { font-weight: 700; }
 
-.quiz-error { border-color: var(--bad); background: var(--bad-soft); }
-.quiz-error-title { margin: 0 0 0.4rem; font-size: 1.2rem; }
-.quiz-error-list { margin: 0.4rem 0 0; padding-left: 1.3rem; }
-
-/* ---- Result ---- */
-
-.result-title { margin: 0 0 1rem; font-size: 1.3rem; line-height: 1.3; }
+/* Result: score ring, percentage, counts */
+.result-title { margin: 0 0 1.1rem; font-family: var(--font-royal); font-weight: 400; font-size: 1.45rem; line-height: 1.4; color: var(--navy); }
 .result-title:focus { outline: none; }
 .result-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 2rem; }
 .result-text { flex: 1 1 14rem; }
-.result-percent { margin: 0; font-size: 2rem; font-weight: 700; line-height: 1.2; }
-.result-message { margin: 0.2rem 0 0.4rem; font-weight: 600; }
-.result-sentence { margin: 0 0 0.5rem; color: var(--ink-soft); font-size: 1rem; }
-.result-note { margin: 1rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
-.result-note-warning { color: var(--bad); font-weight: 600; }
+.result-percent { margin: 0; font-family: var(--font-royal); font-size: 2.4rem; line-height: 1.2; color: var(--navy); }
+.result-message { margin: 0.2rem 0 0.4rem; font-weight: 700; }
+.result-sentence { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 1rem; }
+.result-note { margin: 1rem 0 0; font-family: var(--font-ui); font-size: 0.92rem; color: var(--ink-soft); }
+.result-note-warning { color: var(--maroon); font-weight: 600; }
 
-.score-ring {
-  position: relative;
-  flex: none;
-  width: clamp(9rem, 38vw, 12rem);
-  aspect-ratio: 1;
-}
+.score-ring { position: relative; flex: none; width: clamp(9rem, 38vw, 12rem); aspect-ratio: 1; }
 .score-ring svg { display: block; width: 100%; height: 100%; }
-.ring-track { stroke: var(--none-soft); }
-.ring-progress { stroke: var(--ok); stroke-linecap: butt; transition: stroke-dashoffset 1s ease-out; }
+.ring-track { stroke: var(--line-soft); }
+.ring-progress { stroke: var(--navy); stroke-linecap: butt; transition: stroke-dashoffset 1s ease-out; }
 .ring-fraction {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-royal);
   font-size: clamp(1.9rem, 8vw, 2.7rem);
-  font-weight: 700;
+  color: var(--navy);
 }
 
-.result-counts { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0; padding: 0; list-style: none; }
-.count { font-weight: 600; }
+.result-counts { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0; padding: 0; list-style: none; font-family: var(--font-ui); }
+.count { font-weight: 700; }
 .count-correct { color: var(--ok); }
-.count-wrong { color: var(--bad); }
+.count-wrong { color: var(--maroon); }
 .count-unattempted { color: var(--none); }
 .status-icon { font-weight: 700; }
 
-.review-heading { margin: 1.6rem 0 0.6rem; font-size: 1.2rem; }
+/* Review of every question. Status is shown by a text label, an icon AND the
+   border style/colour, never by colour alone. */
+.review-heading { margin: 1.7rem 0 0.7rem; font-family: var(--font-royal); font-weight: 400; font-size: 1.3rem; color: var(--navy); }
 .review-list { list-style: none; margin: 0; padding: 0; }
 .review-item {
   margin: 0 0 0.9rem;
-  padding: 0.8rem 1rem;
+  padding: 0.85rem 1rem;
+  background: #fff;
   border: 2px solid var(--line);
   border-left-width: 8px;
   border-radius: 10px;
-  background: #fff;
 }
-/* Status is shown by a text label and icon AND by border style/colour. */
 .review-item.status-correct { border-color: var(--ok); border-style: solid; background: var(--ok-soft); }
-.review-item.status-wrong { border-color: var(--bad); border-style: solid; background: var(--bad-soft); }
-.review-item.status-unattempted { border-color: var(--none); border-style: dashed; border-left-style: dashed; background: var(--none-soft); }
+.review-item.status-wrong { border-color: var(--maroon); border-style: solid; background: var(--maroon-soft); }
+.review-item.status-unattempted { border-color: var(--none); border-style: dashed; background: var(--none-soft); }
 
-.review-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3rem; align-items: center; }
-.review-number { font-size: 0.85rem; color: var(--ink-soft); }
-.status-badge { padding: 0.15rem 0.6rem; font-weight: 700; font-size: 0.9rem; border-radius: 999px; background: #fff; border: 2px solid currentColor; }
+.review-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3rem; align-items: center; font-family: var(--font-ui); }
+.review-number { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.status-badge { padding: 0.15rem 0.65rem; font-weight: 700; font-size: 0.9rem; background: #fff; border: 2px solid currentColor; border-radius: 999px; }
 .status-badge-correct { color: var(--ok); }
-.status-badge-wrong { color: var(--bad); }
+.status-badge-wrong { color: var(--maroon); }
 .status-badge-unattempted { color: var(--none); border-style: dashed; }
-.review-question { margin: 0.3rem 0 0.6rem; font-weight: 600; white-space: pre-line; }
+.review-question { margin: 0.35rem 0 0.6rem; font-weight: 700; white-space: pre-line; }
 .review-answers { margin: 0; }
-.review-answers dt { margin-top: 0.4rem; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
+.review-answers dt { margin-top: 0.45rem; font-family: var(--font-ui); font-size: 0.82rem; font-weight: 700; color: var(--ink-soft); }
 .review-answers dd { margin: 0.1rem 0 0; white-space: pre-line; }
-.answer-right::before { content: "✓ "; font-weight: 700; color: var(--ok); }
-.answer-wrong::before { content: "✗ "; font-weight: 700; color: var(--bad); }
+.answer-right::before { content: "\2713\00a0"; font-weight: 700; color: var(--ok); }
+.answer-wrong::before { content: "\2717\00a0"; font-weight: 700; color: var(--maroon); }
 .answer-wrong { text-decoration: line-through; text-decoration-thickness: 1px; }
 .answer-none { font-style: italic; }
 
-/* =====================================================================
-   Quiz History
-   ===================================================================== */
+/* Quizzes sit inside the lesson text, so cancel the lesson-text list and
+   heading rules that would otherwise leak into them. */
+.lesson-content .quiz-wrapper { line-height: 1.7; }
+.lesson-content .quiz-wrapper ol,
+.lesson-content .quiz-wrapper ul { margin: 0; padding-left: 0; }
+.lesson-content .quiz-wrapper li { margin: 0; }
+.lesson-content .quiz-wrapper .review-item { margin: 0 0 0.9rem; }
+.lesson-content .quiz-title,
+.lesson-content .result-title { margin: 0 0 0.5rem; border-bottom: 0; }
+.lesson-content .result-title { margin-bottom: 1.1rem; }
+.lesson-content .review-heading { margin: 1.7rem 0 0.7rem; font-size: 1.3rem; }
+.lesson-content .quiz-wrapper p { margin: 0 0 0.5rem; }
+.lesson-content .quiz-wrapper .result-percent { margin: 0; }
 
-.history-title { margin: 0 0 1rem; font-size: 1.7rem; line-height: 1.3; }
-.history-title:focus { outline: none; }
-.history-title-en { font-size: 0.6em; color: var(--ink-soft); font-weight: 400; }
-.history-summary { margin: 0 0 0.8rem; font-weight: 600; }
-.history-filter { margin: 0 0 1rem; }
-.history-select { font: inherit; padding: 0.35rem 0.5rem; border: 2px solid var(--ink); border-radius: 8px; background: #fff; color: var(--ink); }
-.history-note { margin: 1.2rem 0 0; font-size: 0.9rem; color: var(--ink-soft); }
-.history-clear { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-.history-clear[role="alert"] { padding: 0.8rem 1rem; background: var(--bad-soft); border: 2px solid var(--bad); border-radius: 10px; }
+/* ---- 8. Quiz History, footer, small screens ------------------------------- */
+
+.history-summary { margin: 0 0 0.9rem; font-family: var(--font-ui); font-weight: 700; text-align: center; color: var(--navy); }
+.history-filter { margin: 0 0 1.2rem; font-family: var(--font-ui); text-align: center; }
+.history-select {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  color: var(--navy);
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+}
+.history-note { margin: 1.2rem 0 0; font-family: var(--font-ui); font-size: 0.9rem; color: var(--ink-soft); }
+.history-clear { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dotted var(--line); font-family: var(--font-ui); }
+.history-clear[role="alert"] { padding: 0.9rem 1rem; background: var(--maroon-soft); border: 2px solid var(--maroon); border-radius: 10px; }
 .history-empty .button { margin-top: 0.6rem; }
 
 .history-list { list-style: none; margin: 0; padding: 0; }
 .history-entry {
   margin: 0 0 1rem;
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1.1rem;
   background: var(--card);
-  border: 2px solid var(--line);
-  border-radius: 12px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(90, 60, 10, 0.08);
 }
 .entry-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.2rem 1rem; }
-.entry-title { margin: 0; font-size: 1.1rem; line-height: 1.35; }
-.entry-score { margin: 0; font-size: 1.3rem; font-weight: 700; }
-.entry-meta { margin: 0.2rem 0 0.5rem; color: var(--ink-soft); font-size: 0.95rem; }
-.entry-counts { margin-bottom: 0.7rem; }
+.entry-title { margin: 0; font-size: 1.1rem; line-height: 1.4; color: var(--navy); }
+.entry-score { margin: 0; font-family: var(--font-royal); font-size: 1.5rem; color: var(--navy); }
+.entry-meta { margin: 0.2rem 0 0.5rem; font-family: var(--font-ui); color: var(--ink-soft); font-size: 0.92rem; }
+.entry-counts { margin-bottom: 0.8rem; }
+
+/* Footer */
+.site-footer {
+  padding: 1.6rem 1rem 2rem;
+  text-align: center;
+  color: #e6e9f7;
+  background: var(--navy-deep);
+  border-top: 4px solid var(--gold);
+  font-family: var(--font-ui);
+}
+.footer-verse { margin: 0; font-family: var(--font-royal); font-size: clamp(1.2rem, 4.5vw, 1.7rem); line-height: 1.5; color: var(--gold-light); }
+.footer-meaning { margin: 0.25rem 0 0; font-size: 0.95rem; }
+.footer-tagline { margin: 1rem 0 0; font-size: 0.85rem; letter-spacing: 0.06em; color: #b9c0e0; }
 
 @media (max-width: 30rem) {
-  .quiz, .quiz-result, .quiz-error { padding: 0.9rem 0.8rem 1rem; }
+  .page { padding: 1.4rem 0.75rem 2.5rem; }
+  #lesson-view { padding: 1.1rem 0.9rem 1.6rem; }
+  .quiz, .quiz-result { padding: 1rem 0.85rem 1.1rem; }
+  .group-0 > .lesson-list, .group-0 > .group { margin-left: 0.7rem; margin-right: 0.7rem; }
   .button-row .button { flex: 1 1 100%; text-align: center; }
 }
 
