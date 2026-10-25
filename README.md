@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/favicon.png" alt="Sanskrit-Mitram" width="100" />
+<img src="assets/favicon.png" alt="Sanskrit-Mitram" width="400" />
 
 # संस्कृत-मित्रम्
 ### Sanskrit-Mitram
