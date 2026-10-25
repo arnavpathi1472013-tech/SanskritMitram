@@ -142,6 +142,14 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 }
 
 .site-tagline { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+.site-credit {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-read);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold-text);
+}
+.site-credit span { color: var(--gold); font-size: 0.8em; }
 
 .site-nav {
   display: flex;
@@ -660,7 +668,29 @@ h6.group-title::before { content: "\25C6\00a0"; font-size: 0.7em; color: var(--g
 }
 .footer-verse { margin: 0; font-family: var(--font-royal); font-size: clamp(1.2rem, 4.5vw, 1.7rem); line-height: 1.5; color: var(--gold-light); }
 .footer-meaning { margin: 0.25rem 0 0; font-size: 0.95rem; }
-.footer-tagline { margin: 1rem 0 0; font-size: 0.85rem; letter-spacing: 0.06em; color: #b9c0e0; }
+.footer-tagline { margin: 0.9rem 0 0; font-size: 0.85rem; letter-spacing: 0.06em; color: #b9c0e0; }
+
+/* Credits and contact */
+.footer-contact { margin: 1.4rem auto 0; padding-top: 1.2rem; max-width: 40rem; border-top: 1px dotted rgba(240, 180, 41, 0.6); }
+.footer-label { margin: 0 0 0.6rem; font-family: var(--font-royal); font-size: 1.25rem; color: var(--gold-light); }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+.footer-links a {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  overflow-wrap: anywhere;
+}
+.footer-links a:hover { color: var(--navy-deep); background: var(--gold); }
+.footer-links a:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+.footer-handle { font-weight: 600; }
+.footer-credit { margin: 1.3rem 0 0; font-family: var(--font-read); font-size: 1.05rem; font-weight: 700; color: var(--gold-light); }
+.footer-copy { margin: 0.2rem 0 0; font-family: var(--font-read); font-size: 0.92rem; color: #cfd4ee; }
 
 @media (max-width: 30rem) {
   .page { padding: 1.4rem 0.75rem 2.5rem; }
