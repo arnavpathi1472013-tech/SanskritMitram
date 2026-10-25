@@ -55,15 +55,15 @@ Whether you're revising a श्लोक, learning व्याकरणम्,
 
 <!-- Add actual screenshots to the screenshots/ directory. -->
 
-| 🏠 Home Page | 📖 Lesson Reader |
+| 🏠 Home Page (Desktop) | 📖 Lesson Reader |
 |:---:|:---:|
 | ![Home page preview](assets/screenshots/home.png) | ![Lesson reader preview](assets/screenshots/lesson-reader.png) |
 | Your starting point for learning | Read lessons in a focused layout |
 
-| 📝 Interactive Quiz | 📊 Quiz History |
+| 🏠 Home Page (Mobile) | 📊 Quiz History |
 |:---:|:---:|
 | ![Quiz preview](assets/screenshots/quiz.png) | ![Quiz history preview](assets/screenshots/quiz-history.png) |
-| Practise what you've learned | Review your previous attempts |
+|Experience for phone users | Review your previous attempts |
 
 </div>
 
