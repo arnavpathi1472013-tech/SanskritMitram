@@ -34,6 +34,22 @@
       "keywords": []
     },
     {
+      "id": "textbook/grade-6/Class-6.md",
+      "title": "Class 6",
+      "type": "markdown",
+      "category": "textbook",
+      "sectionPath": [
+        "textbook",
+        "grade-6"
+      ],
+      "sectionLabels": [
+        "Textbooks",
+        "Grade 6"
+      ],
+      "path": "textbook/grade-6/Class-6.md",
+      "keywords": []
+    },
+    {
       "id": "textbook/grade-7/Class-7.md",
       "title": "📚 कक्षा सप्तमी — संस्कृत पाठ्यपुस्तकम्",
       "type": "markdown",
