@@ -25,5 +25,4 @@ Explore the official NCERT Sanskrit textbook chapter by chapter.
 
 **Source:** [National Council of Educational Research and Training (NCERT)](https://ncert.nic.in/)
 
-*सुस्वागतम्! पठत, लिखत, शिक्षत च।* 📖
 ---
